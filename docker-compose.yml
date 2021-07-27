@@ -1,0 +1,37 @@
+version: "3.2"
+
+services:
+  # local mongo server
+  mongodb-server:
+    image: mongo:4.2.3
+    restart: always
+    ports: # expose port to localhost for debugging
+      - 27018:27018
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: colab
+    command: mongod --port 27018
+
+    networks:
+      db:
+        aliases:
+          - mongodb
+
+  # init container to load mongo dumps to local container
+#   mongodb-seed:
+#     image: mongo:4.2.3
+#     volumes:
+#       - ./mongo-seed:/mongo-seed
+#     command: /mongo-seed/import.sh
+#     depends_on:
+#       - mongodb-server
+#     networks:
+#       - db
+#     environment:
+#       - DB_NAME=wawy_test
+#       - MONGO_USER=dbuser
+#       - MONGO_PASSWORD=dbpass
+
+networks:
+  db:
