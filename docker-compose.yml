@@ -1,4 +1,4 @@
-version: "3.2"
+version: '3.2'
 
 services:
   # local mongo server
@@ -10,7 +10,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-      MONGO_INITDB_DATABASE: colab
+      MONGO_INITDB_DATABASE: stockserver
     command: mongod --port 27018
 
     networks:
