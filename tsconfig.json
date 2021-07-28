@@ -1,12 +1,13 @@
-
 {
-    "compilerOptions": {
-      "target": "es6",
-      "module": "commonjs",
-      "rootDir": "./",
-      "outDir": "./build",
-      "esModuleInterop": true,
-      "strict": true,
-      "typeRoots": ["./types"]
-    }
-  } 
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "rootDir": "./",
+    "outDir": "./build",
+    "esModuleInterop": true,
+    "strict": true,
+    "typeRoots": ["./types"],
+    "declaration": true,
+    "types": ["@types/jest", "jest", "node", "express"]
+  }
+}
